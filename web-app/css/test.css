@@ -1,0 +1,156 @@
+/**
+ * ajaxflow css
+ *
+ * @author	Jeroen Wesbeek
+ * @since	20101228
+ *
+ * Revision information:
+ * $Rev:  67319 $
+ * $Author:  duh $
+ * $Date:  2010-12-22 17:45:42 +0100 (Wed, 22 Dec 2010) $
+ */
+
+/** START :: AJAX FLOW **/
+.ajaxFlow {
+	width: 100%;
+}
+.ajaxFlow h1 {
+	color: #006DBA;
+	font-weight: normal;
+	font-size: 16px;
+}
+.ajaxFlowError {
+	width: 97.5%;
+	border: 1px dotted red;
+	padding: 10px 10px 10px 10px;
+}
+
+/** START :: TABS **/
+.ajaxFlow .tabs {
+    display: block;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #006DBA;
+    width: 100%;
+}
+.ajaxFlow .tabs ul {
+    list-style-type: none; /* suppression of useless elements */
+    padding: 0px;
+    font-size: 10px;
+    margin: 0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    height: 20px;
+    width: 100%;
+}
+.ajaxFlow .tabs li {
+    float: left;
+    margin: 0px;
+    height: 20px;
+    float: left;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #006DBA;
+    background: #CCC;
+    font-weight: bold;
+}
+.ajaxFlow .tabs li input {
+	cursor: pointer;
+	color: #006DBA;
+	background-color: transparent;
+	border: none;
+}
+.ajaxFlow .tabs li:last-child:after {
+	content: url('../images/test/spacer.gif');
+}
+.ajaxFlow .tabs li:first-child:before {
+	content: url('../images/test/spacer.gif');
+}
+.ajaxFlow .tabs li:before {
+	content:url(../images/test/arrowR.gif);
+	position:inherit;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	display:inline;
+}
+.ajaxFlow .tabs li:after {
+	content:url(../images/test/arrowL.gif);
+	position:inherit;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	display:inline;
+}
+.ajaxFlow .tabs .content {
+    padding: 0px 10px 0px 10px;
+    display: inline;
+    border: 0px;
+	vertical-align: top;
+	line-height: 20px;
+}
+.ajaxFlow .tabs .active {
+    background-color: #006DBA !important;
+    color: #fff !important;
+    text-shadow: 0px 0px 1px #333;
+}
+
+/** START NAVIGATION **/
+.ajaxFlow .navigation {
+    display: block;
+    padding-top: 2px;
+    border-top: 2px solid #006DBA;
+    width: 100%;
+	color: #666666;
+	font-size: 10px;
+}
+
+.ajaxFlow .navigation .prevnext {
+    cursor: pointer;
+    color: #006DBA;
+    background-color: transparent;
+    border: none;
+}
+
+/** CONTENT STYLES **/
+.ajaxFlow .content {
+	padding: 20px 0px 20px 0px;
+}
+
+.ajaxFlow .content p {
+	text-align: justify;
+	padding: 10px 0px 10px 0px;
+}
+
+.ajaxFlow .content a, .ajaxFlow .content a:visited {
+	color: red;
+	text-decoration: none;
+}
+
+/** START :: buttons inside the ajaxflow **/
+.ajaxFlow .prevnext {
+    cursor: pointer;
+    color: #006DBA;
+    background-color: transparent;
+    border: none;
+}
+/** END :: buttons inside the ajaxflow **/
+
+/** START :: please wait **/
+.ajaxFlow .wait { }
+.ajaxFlow .wait .title {
+    color: #006dba;
+    font-weight: normal;
+    font-size: 24px;
+    margin: .8em 0 .3em 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.ajaxFlow .wait .spinner {
+	background: url(../images/test/spinner-large.gif) no-repeat center top;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	display: block;
+	width: 100%;
+	height: 48px;
+}
+/** END :: please wait **/

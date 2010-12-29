@@ -109,8 +109,8 @@
                               <div>
                                 <div>
                                   <div>
-                                    <h3>Who's Online</h3>
-                                    We have&nbsp;8 guests&nbsp;online</div>
+                                    <h3>Хэн нэвтэрсэн байна</h3>
+                                    8 зочин&nbsp;холбогдсон байна</div>
                                 </div>
 
                               </div>
@@ -221,7 +221,7 @@
                     <div class="footer-left">
                       <div class="footer-right">
 
-                        <div class="copyright">&copy; 2008-2012 TerranTribune Inc. All rights reserved.</div>
+                        <div class="copyright">&copy; 2011</div>
 
                       </div>
                     </div>

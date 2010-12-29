@@ -1,6 +1,9 @@
-import mn.xenon.Role
+
+import mn.xenon.openId.SecUserSecRole
+import mn.xenon.openId.SecRole
+import mn.xenon.openId.SecUser
 import mn.xenon.User
-import mn.xenon.UserRole
+
 class BootStrap {
 
    def springSecurityService
@@ -8,14 +11,14 @@ class BootStrap {
    def init = { servletContext ->
       String password = springSecurityService.encodePassword('password')
 
-      def roleAdmin = new Role(authority: 'ROLE_ADMIN').save()
-      def roleUser = new Role(authority: 'ROLE_USER').save()
+      def roleAdmin = new SecRole(authority: 'ROLE_ADMIN').save()
+      def roleUser = new SecRole(authority: 'ROLE_USER').save()
 
       def user = new User(username: 'user', password: password, enabled: true).save()
       def admin = new User(username: 'admin', password: password, enabled: true).save()
 
-      UserRole.create user, roleUser
-      UserRole.create admin, roleUser
-      UserRole.create admin, roleAdmin, true
+      SecUserSecRole.create user, roleUser
+      SecUserSecRole.create admin, roleUser
+      SecUserSecRole.create admin, roleAdmin, true
    }
 }

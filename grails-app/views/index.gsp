@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Welcome to Grails</title>
+  <title>Мэдээлэл технологийн тайлбар толь</title>
   <meta name="layout" content="main"/>
 
 </head>

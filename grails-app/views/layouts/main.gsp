@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><g:layoutTitle default="Grails"/></title>
+  <title><g:layoutTitle default="Мэдээлэл технологийн тайлбар толь"/></title>
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}"/>
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'template_css.css')}"/>
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'blue.css')}"/>
@@ -155,7 +155,9 @@
                                         <g:link controller="logout" action="index">Гарах</g:link>
 
                                       </sec:ifLoggedIn>
-
+                                      <sec:ifNotLoggedIn>
+                                        <g:link controller="openId" action="auth">Нэвтрэх</g:link>
+                                      </sec:ifNotLoggedIn>
                                     </div>
 
                                   </div>

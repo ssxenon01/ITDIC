@@ -50,12 +50,12 @@
                             
                         </tr>
                     
-                        <tr class="prop">
+                        %{--<tr class="prop">
                             <td valign="top" class="name"><g:message code="rootWord.createdUser.label" default="Created User" /></td>
                             
                             <td valign="top" class="value"><g:link controller="user" action="show" id="${rootWordInstance?.createdUser?.id}">${rootWordInstance?.createdUser?.encodeAsHTML()}</g:link></td>
                             
-                        </tr>
+                        </tr>--}%
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="rootWord.definition.label" default="Definition" /></td>
@@ -118,13 +118,13 @@
                             <td valign="top" class="value"><g:formatDate date="${rootWordInstance?.updatedDate}" /></td>
                             
                         </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="rootWord.updatedUser.label" default="Updated User" /></td>
-                            
-                            <td valign="top" class="value"><g:link controller="user" action="show" id="${rootWordInstance?.updatedUser?.id}">${rootWordInstance?.updatedUser?.encodeAsHTML()}</g:link></td>
-                            
-                        </tr>
+
+                    %{--<tr class="prop">
+                        <td valign="top" class="name"><g:message code="rootWord.updatedUser.label" default="Updated User" /></td>
+
+                        <td valign="top" class="value"><g:link controller="user" action="show" id="${rootWordInstance?.updatedUser?.id}">${rootWordInstance?.updatedUser?.encodeAsHTML()}</g:link></td>
+
+                    </tr>--}%
 
                     
                     </tbody>

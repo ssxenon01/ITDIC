@@ -7,7 +7,7 @@ body {
 }
 
 div.openid-loginbox {
-	width: 450px;
+	width: 250px;
 	margin-left: auto;
 	margin-right: auto;
 	background: white;
@@ -15,7 +15,7 @@ div.openid-loginbox {
 }
 
 .openid-loginbox-inner {
-	width: 450px;
+	width: 200px;
 	border: 1px blue solid;
 }
 
@@ -53,7 +53,7 @@ input.openid-identifier {
 
 input[type='text'],input[type='password'] {
 	font-size: 16px;
-	width: 310px;
+	width: 150px;
 }
 input[type='submit'] {
 	font-size: 14px;

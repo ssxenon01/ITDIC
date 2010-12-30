@@ -32,9 +32,54 @@
   <script type="text/javascript" src="${resource(dir: 'js', file: 'caption.js')}"></script>
   <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon"/>
   <g:layoutHead/>
-  <g:javascript library="application"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.3.1/resources/css/ext-all.css"/>
+  <script type="text/javascript" src="http://extjs.cachefly.net/ext-3.3.1/adapter/ext/ext-base.js"></script>
+  <script type="text/javascript" src="http://extjs.cachefly.net/ext-3.3.1/ext-all.js"></script>
 </head>
+<script type="text/javascript">
+  Ext.onReady(function() {
+
+    var ds = new Ext.data.Store({
+      proxy: new Ext.data.HttpProxy({
+        url: '<g:createLink controller="search" action="word"/>'
+      }),
+      reader: new Ext.data.JsonReader({
+        root: 'results',
+        totalProperty: 'total_count',
+        id: 'word_id'
+      }, [
+        {name: 'word_id'},
+        {name: 'name'},
+        {name: 'description'}
+      ])
+    });
+
+    // Custom rendering Template
+    var resultTpl = new Ext.XTemplate(
+            '<tpl for="."><div class="search-item">',
+            '<h3>{name}</h3>',
+            '{description}',
+            '</div></tpl>'
+            );
+
+    var search = new Ext.form.ComboBox({
+      store: ds,
+      displayField:'name',
+      typeAhead: false,
+      loadingText: 'Searching...',
+      width: 460,
+      minChars:2,
+      pageSize:10,
+      hideTrigger:true,
+      tpl: resultTpl,
+      applyTo: 'esearch',
+      itemSelector: 'div.search-item',
+      onSelect: function(record) { // override default onSelect to do redirect
+        window.location = String.format('<g:createLink controller="rootWord" action="show"/>?id={0}', record.data.word_id);
+      }
+    });
+  });
+</script>
 <body id="ff-default" class="f-default bc-blue iehandle">
 <div id="page-bg">
   <!-- Begin Wrapper -->
@@ -51,17 +96,22 @@
                   <a href="#" class="nounder"><img src="${resource(dir: 'images', file: 'blank.gif')}" border="0" alt="" id="logo"/></a>
 
                   <div id="searchmod">
-                    <div class="moduletable">
-                      <form action="index.php" method="post">
 
-                        <div class="search">
-                          <input name="searchword" id="mod_search_searchword" maxlength="20" alt="Search" class="inputbox" type="text" size="20" value="search..." onblur="if (this.value == '') this.value = 'search...';" onfocus="if (this.value == 'search...') this.value = '';"/></div>
-                        <input type="hidden" name="task" value="search"/>
-                        <input type="hidden" name="option" value="com_search"/>
-                      </form></div>
+                    <div style="width:490px;">
+                      <div class="x-box-tl"><div class="x-box-tr"><div class="x-box-tc"></div></div></div>
+                      <div class="x-box-ml"><div class="x-box-mr"><div class="x-box-mc">
+                        <input type="text" size="20" name="search" id="esearch"/>
+                        <div style="padding-top:4px;">
+                          Шууд хайлт нь хамгийн багадаа 2 үсгээр хайна
+                        </div>
+                      </div></div></div>
+                      <div class="x-box-bl"><div class="x-box-br"><div class="x-box-bc"></div></div></div>
+                    </div>
 
                   </div>
+
                 </div>
+
                 <!-- End Header -->
 
                 <!-- Begin Horizontal Menu -->
@@ -99,12 +149,19 @@
                                 <div>
                                   <div>
 
-                                    <div align="center">test</div>
+                                    <div>
+                                      <sec:ifLoggedIn>
+                                        <sec:username/>
+                                        <g:link controller="logout" action="index">Гарах</g:link>
+
+                                      </sec:ifLoggedIn>
+
+                                    </div>
+
                                   </div>
                                 </div>
                               </div>
                             </div>
-
                             <div class="module">
                               <div>
                                 <div>
@@ -212,6 +269,7 @@
                       </div>
 
                       <g:include controller="search" action="lastword"></g:include>
+
                     </div>
 
                   </div>

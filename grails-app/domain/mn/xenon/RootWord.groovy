@@ -2,7 +2,6 @@ package mn.xenon
 
 class RootWord {
 
-
   String word
   String definition
   String alsoKnownAs

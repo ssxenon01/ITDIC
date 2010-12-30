@@ -97,7 +97,7 @@ p {
 h1, h2, h3, h4, h5 {
     padding-bottom: 5px;
     margin: 25px 0 10px 0;
-    font-weight: normal;
+    /*font-weight: normal;*/
     line-height: 120%;
 }
 
@@ -226,9 +226,7 @@ tr.sectiontableentry1 td, td.sectiontableentry1 {
     float: left;
 }
 
-.logo-module .moduletable h3 {
-    display: none;
-}
+
 
 #main-section a:hover {
     color: #333;
@@ -264,7 +262,7 @@ tr.sectiontableentry1 td, td.sectiontableentry1 {
 
 #header {
     background: #ededed url(../images/header-bg.png) 0 0 repeat-x;
-    position: relative;
+    /*position: relative;*/
     border-top: 1px solid #dedede;
     border-left: 1px solid #dedede;
     border-right: 1px solid #dedede;
@@ -475,9 +473,7 @@ span.date-number {
     margin: 0;
 }
 
-.footer-mod .moduletable h3 {
-    display: none;
-}
+
 
 img#rocket {
     width: 165px;
@@ -496,23 +492,15 @@ img#rocket {
     position: absolute;
     padding: 10px;
     margin: 0;
-    top: 38px;
-    right: 0px;
-    width: 230px;
-    overflow: hidden;
+    top: 28px;
+    right: 50px;
+    width: 600px;
+    bottom: 20px;
 }
 
-#searchmod .inputbox {
-    width: 220px;
-    height: 20px;
-    padding-left: 4px;
-    font-size: 110%;
-    color: #666;
-}
 
-#searchmod .moduletable h3 {
-    display: none;
-}
+
+
 
 table.mainbody, table.blog {
     width: 100%;
@@ -646,9 +634,7 @@ table.blog td td {
     padding: 35px 12px 12px 12px;
 }
 
-#main-section .module-notitle h3 {
-    display: none;
-}
+
 
 #main-section .module-notitle {
     background: url(../images/module3-tr.png) 100% 0 no-repeat;
